@@ -1,4 +1,6 @@
 # MBED-library-for-Serial-print-float-string--int
+Una opcion mas facil para imprimir en puerto serial para STM32:
+
 La libreria se diseño a partir de la API de BufferdSerial
 Asi entonces las funciones de la API tambien pueden ser utilizadas con normalidad teniendo en cuenta que BuefferdSerial ya se esta usando y esta declarado
 ASI: "static BufferedSerial pc(USBTX,USBRX);"
