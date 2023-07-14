@@ -17,8 +17,8 @@ int main()
         //"c" de caracteres
         //"d" de enteros
         //"f" de flotantes
-        serialc.printc("cuantos años tienes\r\n"); //tambien se puede usar \r y \n si es necesario
-        serialc.printc("sapa, tengo ");
+        serialc.printc("cuantos años tienes?\r\n"); //tambien se puede usar \r y \n si es necesario
+        serialc.printc("tengo ");
         seriald.printd(21);
         serialc.printc(" años y tu ");
         serialf.printfln(-99.02);
