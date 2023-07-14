@@ -2,29 +2,26 @@
 #include "Serial_print.cpp"
 #include "Serial_print.h"
 
-
-// main() runs in its own thread in the OS
 int main()  
 {   
     //Ambas velocidades de transmision deben ser las mismas
-    Serialf serialf=Serialf(baud_rate1); //establecer baud_rate creacion de objeto serialf para envio de numeros flotantes
-    Seriald seriald=Seriald(baud_rate1); //establecer baud_rate creacion de objeto seraild para envio de enteros
+    //Las velocidades estan en Serial_print.h, toca agregar las demas
+    Serialf serialf = Serialf(baud_rate1); //establecer baud_rate creacion de objeto serialf para envio de numeros flotantes
+    Seriald seriald = Seriald(baud_rate1); //establecer baud_rate creacion de objeto seraild para envio de enteros
+    Serialc serialc = Serialc(baud_rate1);
+    string saludo="Hola amigos de youtube :p como estan";
+    serialc.printcln(saludo);
     while (true) {
-        
-        float flotan=8100.912;
-        int i=56;
-        serialf.printf(-164.092); //imprime flotante con tres decimales y hace salto de linea
-        serialf.printf(flotan); 
-        seriald.printd(-i);       //imprime entero y hace salto de linea
-        seriald.printd(-89.092);    //trunca imprime y hace salto de linea
-        
-        /*
-        for (float i = 0.0; i < 360.0; i += 1){
-                int senoo=0.5 * (sinf(i * 3.14159265 / 180.0))*999999999;//1000000000  999999999
-                 seriald.printd(senoo);
-        }
-        */
-        //ThisThread::sleep_for(500ms);
+        //para agregar los saltos de linea se incluye "ln" en el nombre de la funcion
+        //printcln()   -   printfln()   -   printdln()
+        //"c" de caracteres
+        //"d" de enteros
+        //"f" de flotantes
+        serialc.printc("cuantos años tienes\r\n"); //tambien se puede usar \r y \n si es necesario
+        serialc.printc("sapa, tengo ");
+        seriald.printd(21);
+        serialc.printc(" años y tu ");
+        serialf.printfln(-99.02);
     }
 }
 
